@@ -22,6 +22,11 @@ _amd64.deb \
      && apt install -y /tmp/chrome.deb \
      && rm /tmp/chrome.deb
      && rm -rf /var/lib/apt/lists/*
+     && apt-cache show google-chrome-stable
+     && dpkg -s google-chrome-stable
+     && realpath /usr/bin/google-chrome-stable
+     && /usr/bin/google-chrome-stable --version
+     && dpkg -L google-chrome-stable
 
 # When installing Puppeteer through npm, instruct it to not download Chromium.
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
