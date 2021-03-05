@@ -19,12 +19,12 @@ RUN  apt-get update \
      && apt-get update \
      && wget --no-verbose -O /tmp/chrome.deb http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_88.0.4324.182-1_amd64.deb \
      && apt install -y /tmp/chrome.deb \
-     && rm /tmp/chrome.deb
-     && rm -rf /var/lib/apt/lists/*
-     && apt-cache show google-chrome-stable
-     && dpkg -s google-chrome-stable
-     && realpath /usr/bin/google-chrome-stable
-     && /usr/bin/google-chrome-stable --version
+     && rm /tmp/chrome.deb \
+     && rm -rf /var/lib/apt/lists/* \
+     && apt-cache show google-chrome-stable \
+     && dpkg -s google-chrome-stable \
+     && realpath /usr/bin/google-chrome-stable \
+     && /usr/bin/google-chrome-stable --version \
      && dpkg -L google-chrome-stable
 
 # When installing Puppeteer through npm, instruct it to not download Chromium.
